@@ -38,6 +38,35 @@ ECMAScript函数不能像传统意义上那样实现重载。而在其他语言�
 ## 4.1.3 传递参数  
 ECMAScript中所有函数的参数都是按值传递的。   
 
+为了证明对象是按值传递的:    
+
+```js
+function setName(obj) {
+    obj.name = "Nicholas";
+}
+
+var person = new Object();
+setName(person);
+alert(person.name); //Nicholas
+```
+
+
+```js
+function setName(obj) {
+    obj.name = "Nicholas";
+    obj = new Object();
+    obj.name = "Greg";
+}
+
+var person = new Object();
+setName(person);
+alert(person.name);  //"Nicholas"
+```
+
+
+
+
+
 
 
 
