@@ -99,6 +99,50 @@ typeof检测正则表达式时，返回function
 标识符解析时沿着作用域链一级一级地搜索标识符的过程。搜索过程始终从作用域链的前端开始，然后逐级逐级地向后回溯，知道找到标识符为止。
 
 
+## 4.2.1 延长作用域链  
+
++ try-catch语句的catch块  
++ with语句  
+
+这两个语句都会在作用域链的前端添加一个变量对象。对于with语句来说，会将指定的对象添加到作用域链中。对于catch语句来说，会创建一个新的变量对象，其中包含的是被抛出的错误对象的声明。  
+
+```js
+function buildUrl() {
+    var qs = "?debug=true";
+    with(location) {
+        var url = herf + qs;
+    }
+    return url;
+}
+```  
+
+
+with语句内部，定义了一个名为url的变量，因而url就成了函数执行环境的一部分，所以可以作为函数的值被返回。  
+
+
+## 4.2.2 没有块级作用域  
+
+```js
+if (true) {
+    var color = "blue";
+}
+alert(color); // "blue"
+```
+
+
+这里是一个在if语句中定义了变量color。如果是在C、C++或Java中，color会在if语句执行完毕后被销毁。但在JavaScript中，if语句中的变量声明会将变量添加到当前的执行环境。  
+
+
+1. 声明变量  
+   使用var声明的变量会自动被添加到最接近的环境中。在函数内部，最接近的环境就是函数的局部环境；在with语句中，最接近的环境是函数环境。如果初始化变量时没有使用var声明，该变量会自动被添加到全局环境。   
+   ```js
+   function add(num1, num2) {
+       var sum = num1 + num2;
+       return sum;
+   }
+   var result = add(10, 20);
+   alert(sum); //报错
+   ```
 
 
 
