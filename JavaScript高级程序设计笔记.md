@@ -63,6 +63,34 @@ setName(person);
 alert(person.name);  //"Nicholas"
 ```
 
+在函数内部修改了参数的值，但原始的引用仍然保持未变。实际上，在函数内部重写obj时，这个变量引用的就是一个局部对象了。而这个局部对象会在函数执行完毕后立即被销毁。  
+
+
+## 4.1.4 检测类型   
+
+```js
+var s = null;
+var o = new Object();
+
+alert(typeof s); //object
+alert(typeof o); //object
+```
+
+检测引用类型这个操作符用处不大。通常不是想知道某个值是对象，而是想知道它是什么类型的对象。为此，ECMAScript提供了instanceof 操作符：  
+
+```js
+result = variable instanceof constructor
+```
+
+
+```js
+alert(person instanceof Object);  
+``` 
+
+根据规定，所有的引用类型的值都是Object的实例。因此，在检测一个引用类型值和Object构造函数时，instanceof操作符始终会返回true。当然，如果使用instanceof操作符检测基本类型的值，则该操作符始终会返回false，因为基本类型不是对象。  
+
+
+
 
 
 
