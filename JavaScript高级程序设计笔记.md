@@ -89,6 +89,8 @@ alert(person instanceof Object);
 
 根据规定，所有的引用类型的值都是Object的实例。因此，在检测一个引用类型值和Object构造函数时，instanceof操作符始终会返回true。当然，如果使用instanceof操作符检测基本类型的值，则该操作符始终会返回false，因为基本类型不是对象。  
 
+typeof检测正则表达式时，返回function  
+
 
 
 
