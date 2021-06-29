@@ -142,7 +142,26 @@ alert(color); // "blue"
    }
    var result = add(10, 20);
    alert(sum); //报错
+   ```  
+   如果省略这个例子中的var关键字，那么add()执行完毕后，sum也将可以访问到：  
+   
+   ```js
+   function add(num1, num2) {
+       sum = num1 + num2;
+       return sum;
+   }
+   var result = add(10, 20);
+   alert(sum); //30
    ```
+
+   这个例子中的变量sum在被初始化赋值时没有使用var关键字。于是，当调用完add()之后，添加到全局环境中的变量sum将继续存在；即使函数已经执行完毕，后面的代码依旧可以访问它。  
+
+   严格模式下，初始化未经声明的变量会导致错误。   
+
+2. 查询标识符
+
+
+
 
 
 
