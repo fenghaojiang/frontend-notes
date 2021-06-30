@@ -34,7 +34,13 @@ function problem() {
 但在引用计数策略实现中，当函数执行完毕后，objectA和objectB还将继续存在，因为他们的引用次数永远不会是0  
 假如这个函数被重复多次调用，就会导致大量内存得不到回收。    
 
-只要IE中涉及COM(Component Object Model, 组件对象模型)对象， 就会存在循环引用的问题。  
+只要IE中涉及COM(Component Object Model, 组件对象模型)对象， 就会存在循环引用的问题。    
+
+为了解决上述问题，IE9把BOM和DOM对象都转换成了真正的JavaScript对象。这样，就避免了两种垃圾收集算法并存导致的问题，也消除了常见的内存设计问题。  
+
+
+
+
 
 
 
