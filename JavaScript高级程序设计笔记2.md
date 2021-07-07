@@ -50,7 +50,21 @@ alert(person.name);
 从功能上看，这两种访问对象属性的方法没有任何区别。但方括号语法的主要优点是可以通过变量来访问属性  
 
 
+### 5.2.4 队列方法   
 
+```js
+var colors = new Array();
+var count = colors.push("red", "green");
+alert(count); // 2
+
+
+count = color.push("black");
+alert(count);
+
+var item = colors.shift();
+alert(item); // "red"
+alert(colors.lenght); //2
+```
 
 
 
