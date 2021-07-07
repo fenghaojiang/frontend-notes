@@ -59,12 +59,28 @@ alert(count); // 2
 
 
 count = color.push("black");
-alert(count);
+alert(count);  // 3
 
-var item = colors.shift();
+var item = colors.shift(); //移除第一项
 alert(item); // "red"
 alert(colors.lenght); //2
+```  
+
+ECMAScript还为数组提供了一个unshift()方法。顾名思义，unshift()和shift()的用途相反：它能在数组的前端添加任意个项并返回新数组的长度。因此，同时使用unshift()和pop()方法，可以从相反的方向来模拟队列，即再数组的前端添加项，从数组末端移除项，如下面的例子所示。  
+
+```js
+var colors = new Array();
+var count = colors.unshift("red", "green");
+alert(count); //2
+
+count = colors.unshift("block");
+alert(count); // 3
+
+var item = colors.pop();
+alert(item);  // "green"
+alert(colors.length); //2
 ```
+
 
 
 
