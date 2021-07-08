@@ -50,3 +50,14 @@ alert(matches[1]); //" and dad and baby"
 alert(matches[2]); //" and baby"
 ```  
 
+正则表达式的第二个方法是test(),它接受一个字符串参数。在模式与该参数匹配的情况下返回true;否则，返回false。在只想知道目标字符串与某个模式是否匹配，但不需要知道其文本内容的情况下，使用这个方法非常方便。因此，test()方法经常被用在if语句中  
+
+
+```js
+var text = "000-00-0000";
+var pattern = /\d{3}-\d{2}-\d{4}/;
+if (pattern.test(text)) {
+    alert("the pattern was matched.");
+}
+```
+
