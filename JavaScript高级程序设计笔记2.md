@@ -92,3 +92,19 @@ splice()方法---最强大的数组方法，它有很多种用法。主要用途
 
 splice()方法始终都会返回一个数组，该数组的中包含从原始数组中删除的项(如果没有删除任何项，则返回一个空数组)  
 
+```js
+var colors = ["red", "green", "blue"];
+var removed = colors.splice(0, 1);
+alert(colors); //green, blue
+alert(removed); //red
+
+removed = colors.splice(1, 0, "yellow", "orange");
+alert(colors); //green, yellow, orange, blue
+alert(removed); // 返回的是一个空数组
+
+removed = colors.splice(1, 1, "red", "purple");
+alert(colors);
+alert(removed);
+```  
+
+
