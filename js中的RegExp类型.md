@@ -39,5 +39,14 @@ var pattern2 = new RegExp("[bc]at", "i"); //ps: 字符串要转义
 |/w\\hello\\123|\\w\\\\hellow\\\\123|  
 
 
+```js
+var text = "mom and dad and baby";
+var pattern = /mom( and dad( and baby)?)?/gi;
 
+var matches = pattern.exec(text);
+
+alert(matches[0]); //"mom and dad and baby"
+alert(matches[1]); //" and dad and baby"
+alert(matches[2]); //" and baby"
+```  
 
